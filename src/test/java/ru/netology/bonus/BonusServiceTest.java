@@ -1,3 +1,5 @@
+package ru.netology.bonus;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +12,7 @@ class BonusServiceTest {
 
         long expected = 500;
 
-        int result = service.calculate(true, 1_000_000);
+        long result = service.calculate(1_000_000_60, true);
         assertEquals(expected, result);
 
     }
@@ -21,7 +23,7 @@ class BonusServiceTest {
 
         long expected = 30;
 
-        long result = service.calculate(true, 1000);
+        long result = service.calculate(1000_60, true);
         assertEquals(expected, result);
 
     }
@@ -32,7 +34,7 @@ class BonusServiceTest {
 
         long expected = 500;
 
-        int result = service.calculate(false, 1_000_000);
+        long result = service.calculate(1_000_000_60, false);
         assertEquals(expected, result);
 
     }
@@ -43,8 +45,9 @@ class BonusServiceTest {
 
         long expected = 10;
 
-        long result = service.calculate(false, 1000);
+        long result = service.calculate(1000_60, false);
         assertEquals(expected, result);
 
     }
 }
+
